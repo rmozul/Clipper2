@@ -18,6 +18,7 @@
 #include <algorithm>
 #include <numeric>
 #include <cmath>
+#include <iterator>
 
 // Fusing a * b + c into one rounding moves values that are then rounded to integers, so the
 // output would depend on the compiler and target. Clang fuses by default wherever FMA exists, so
