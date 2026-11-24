@@ -825,6 +825,13 @@ namespace Clipper2Lib
     return CompareProducts(static_cast<int64_t>(pt2.x - pt1.x), static_cast<int64_t>(pt3.y - pt2.y),
       static_cast<int64_t>(pt2.y - pt1.y), static_cast<int64_t>(pt3.x - pt2.x));
   }
+  inline int CrossProductSign(const Point<double>& pt1, const Point<double>& pt2, const Point<double>& pt3)
+  {
+    const double ab = (pt2.x - pt1.x) * (pt3.y - pt2.y);
+    const double cd = (pt2.y - pt1.y) * (pt3.x - pt2.x);
+    return (ab > cd) - (ab < cd);
+  }
+
 
   template <typename T>
   inline bool IsCollinear(const Point<T>& pt1,
